@@ -1,0 +1,7 @@
+export/
+.vscode/
+robz/
+source/funkin/ui/freeplay/FreeplayState.hx~
+source/funkin/play/PlayState.hx~
+source/funkin/play/PlayStatePlayList.hx~
+APIStuff.hx
