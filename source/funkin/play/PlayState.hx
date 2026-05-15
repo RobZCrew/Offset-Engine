@@ -189,13 +189,13 @@ class PlayState extends MusicBeatState {
         // i hate Null Object Reference
         /*new FlxTimer().start(0.25, () -> {
             if (isStoryMode)
-                MusicBeatState.switchState(new funkin.menus.StoryMenuState());
+                MusicBeatState.switchState(new funkin.ui.story.StoryMenuState());
             else
-                MusicBeatState.switchState(new funkin.menus.FreeplayState());
+                MusicBeatState.switchState(new funkin.ui.freeplay.FreeplayState());
         });*/
     }
 
-    override function update(elapsed:Bool) {
+    override function update(elapsed:Float) {
         super.update(elapsed);
 
         if (FlxG.mouse.justPressed.ESCAPE && canPause) {
