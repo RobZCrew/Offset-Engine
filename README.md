@@ -16,7 +16,7 @@ I would greatly appreciate it.
 
 # Credits
 Offset Engine Crew<br>
-V-Slice (NEW FNF) - For the folders organization.
+V-Slice (NEW FNF) - For the folders organization.<br>
 Friday Night Funkin' - For the game lol.
 
 # Offset Engine Crew
