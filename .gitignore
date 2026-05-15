@@ -4,5 +4,8 @@ robz/
 source/funkin/ui/freeplay/FreeplayState.hx~
 source/funkin/play/PlayState.hx~
 source/funkin/play/PlayStatePlayList.hx~
+art/readme-old.txt
 README-old.md
+CHANGELOG.md
+Modding.md
 APIStuff.hx
