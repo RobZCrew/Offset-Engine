@@ -1,0 +1,12 @@
+export/
+.vscode/
+unused/
+source/funkin/states/FreeplayState.hx~
+source/funkin/states/PlayState.hx~
+source/funkin/states/editors/ChartingState.hx~
+source/funkin/objects/game/PlayStatePlayList.hx~
+art/readme-old.txt
+README-old.md
+CHANGELOG.md
+Modding.md
+APIStuff.hx
