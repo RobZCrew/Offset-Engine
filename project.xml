@@ -69,12 +69,12 @@
         <haxelib name="tjson" version="1.4.0" />
 
         <!-- Engine stuff -->
-        <haxelib name="hscript-iris" version="2.4.0" />
+        <haxelib name="hscript-iris" version="1.1.3" />
         <haxelib name="hxvlc" version="1.9.3" />
         <haxelib name="hxdiscord_rpc" version="1.2.4" />
         <haxelib name="flxanimate" />
         <haxelib name="lemon-ui" />
-        <haxelib name="moonchart" />
+        <!--<haxelib name="moonchart" />-->
 
         <!-- Disable Discord IO Thread -->
         <haxedef name="DISCORD_NO_IO_THREAD" if="hxdiscord_rpc" />
