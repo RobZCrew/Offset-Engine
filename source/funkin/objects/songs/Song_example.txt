@@ -1,1 +1,0 @@
-{"meta":{"song":"Example","bpm":150,"needsVoices":true,"speed":2,"validScore":true},"events":[{"t":0,"type":"Change BPM","v":[140]}],"strumLines":[{"notes":[{t:0,l:0,len:0},{t:500,l:0,len:100,type:"No Animation"}],"strumVisible":true,"position":"dad","type":0,"vocalsSuffix":"","characters":["dad"]}]}

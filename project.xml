@@ -2,7 +2,7 @@
 <project>
         <!-- _________________________ Application Settings _________________________ -->
 
-        <app title="Friday Night Funkin': RobZ Engine" file="RobZEngine" packageName="com.robz.robzengine" package="com.robz.robzengine" main="Main" version="0.1.0" company="RobZ" />
+        <app title="Friday Night Funkin': RobZ Engine" file="RobZEngine" packageName="com.robz.robzengine" package="com.robz.robzengine" main="funkin.system.Main" version="0.1.0" company="RobZ" />
 
         <set name="APP_ID" value="0x0100f6c013bbc000" />
 
@@ -37,7 +37,7 @@
         <set name="BUILD_DIR" value="export/release" unless="debug" />
         <set name="BUILD_DIR" value="export/32bit" if="32bit" />
 
-        <claaspath name="source" />
+        <source name="source" />
 
         <assets path="assets/images" />
         <assets path="assets/videos" />
@@ -72,7 +72,7 @@
         <haxelib name="hscript-iris" version="1.1.3" />
         <haxelib name="hxvlc" version="1.9.3" />
         <haxelib name="hxdiscord_rpc" version="1.2.4" />
-        <haxelib name="flxanimate" />
+        <haxelib name="flixel-animate" />
         <haxelib name="lemon-ui" />
         <!--<haxelib name="moonchart" />-->
 

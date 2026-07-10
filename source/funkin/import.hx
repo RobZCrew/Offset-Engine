@@ -20,7 +20,7 @@ import flixel.math.FlxRect;
 
 import flixel.group.FlxGroup;
 import flixel.group.FlxSpriteGroup;
-import flixel.group.FlxTypedGroup;
+//import flixel.group.FlxTypedGroup;
 
 import flixel.util.FlxTimer;
 import flixel.util.FlxColor;
@@ -28,11 +28,11 @@ import flixel.util.FlxAxes;
 import flixel.util.FlxSort;
 import flixel.util.FlxSave;
 import flixel.util.FlxDestroyUtil;
-import flicel.util.FlxStringUtil;
+import flixel.util.FlxStringUtil;
 
 import flixel.text.FlxText;
-import flixel.text.FlxTextAlign;
-import flixel.text.FlxTextBorderStyle;
+/*import flixel.text.FlxTextAlign;
+import flixel.text.FlxTextBorderStyle;*/
 
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
@@ -42,7 +42,7 @@ import flixel.addons.display.FlxBackdrop;
 
 // MISC
 import motion.*; // imports Actuate and MotionPath
-import flxanimate.*;
+import animate.*;
 
 // FUNKIN / ENGINE
 import funkin.states.PlayState;
