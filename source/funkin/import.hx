@@ -45,18 +45,18 @@ import motion.*; // imports Actuate and MotionPath
 import animate.*;
 
 // FUNKIN / ENGINE
-import funkin.states.PlayState;
+//import funkin.states.PlayState;
 import funkin.states.MusicBeatState;
-import funkin.substates.MusicBeatSubstate;
+//import funkin.substates.MusicBeatSubstate;
 import funkin.objects.game.Alphabet;
-import funkin.objects.input.Controls;
-import funkin.objects.songs.Conductor;
-import funkin.objects.graphics.FunkinSprite;
+//import funkin.objects.input.Controls;
+import funkin.objects.song.Conductor;
+/*import funkin.objects.graphics.FunkinSprite;
 import funkin.objects.graphics.text.FunkinText;
-import funkin.objects.graphics.video.FunkinVideo;
+import funkin.objects.graphics.video.FunkinVideo;*/
 import funkin.utils.CoolUtil;
-import funkin.utils.CameraUtil;
-import funkin.utils.Preferences;
+/*import funkin.utils.CameraUtil;
+import funkin.utils.Preferences;*/
 import funkin.utils.Paths;
 
 // USING CLASSES

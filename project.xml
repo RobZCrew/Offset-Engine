@@ -2,7 +2,7 @@
 <project>
         <!-- _________________________ Application Settings _________________________ -->
 
-        <app title="Friday Night Funkin': RobZ Engine" file="RobZEngine" packageName="com.robz.robzengine" package="com.robz.robzengine" main="funkin.system.Main" version="0.1.0" company="RobZ" />
+        <app title="Friday Night Funkin': Offset Engine" file="RobZEngine" packageName="com.robz.robzengine" package="com.robz.robzengine" main="funkin.system.Main" version="0.1.0" company="RobZ" />
 
         <set name="APP_ID" value="0x0100f6c013bbc000" />
 
