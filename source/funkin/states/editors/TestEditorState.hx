@@ -1,8 +1,10 @@
 package funkin.states.editors;
 
 import lemonui.elements.TabPanel;
+import funkin.system.debug.DebugPopup;
 
 class TestEditorState extends MusicBeatState {
+    public var debug:DebugPopup;
     public var tabPanel:TabPanel;
     public var sprite:FlxSprite;
 
@@ -19,14 +21,17 @@ class TestEditorState extends MusicBeatState {
         sprite.makeGraphic(100, 100, 0xFF00FF00);
         add(sprite);
         tabPanel.addToTab(0, sprite);
+
+        debug = new DebugPopup();
+        add(debug);
     }
 
     override public function update(elapsed:Float):Void {
         super.update(elapsed);
 
         if (FlxG.keys.justPressed.BACKSPACE) {
-            FlxG.switchState(new funkin.states.TitleState());
-            trace('switching to title state');
+            debug.showPopup("You can't go back to TitleState due to a crash");
+            trace('no');
         }
     }
 }

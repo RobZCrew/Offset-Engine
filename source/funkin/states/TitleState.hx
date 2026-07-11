@@ -102,10 +102,19 @@ class TitleState extends MusicBeatState {
 
     private function skipIntro():Void {
         if (skippedIntro) return;
-        remove(ngSpr);
+
+        if (ngSpr != null)
+            remove(ngSpr);
 
         FlxG.camera.flash(FlxColor.WHITE, 4);
-        textGroup.visible = false;
+
+        if (textGroup != null)
+            textGroup.visible = false;
+
+        logoBl.visible = true;
+        gfDance.visible = true;
+        titleText.visible = true;
+
         skippedIntro = true;
     }
 
