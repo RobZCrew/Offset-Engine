@@ -1,11 +1,11 @@
-package funkin.states;
+package funkin.substates;
 
-import flixel.FlxState;
+import flixel.FlxSubState;
 import funkin.states.transition.MusicBeatTransition;
 import funkin.system.interfaces.IBeatReceiver;
 import funkin.system.debug.DebugPopup;
 
-class MusicBeatState extends FlxState implements IBeatReceiver {
+class MusicBeatSubstate extends FlxSubState implements IBeatReceiver {
     private var _lastBeat:Int = -1;
     private var _lastStep:Int = -1;
 
@@ -15,18 +15,11 @@ class MusicBeatState extends FlxState implements IBeatReceiver {
     private var controls(get, never):Controls;
     private var debug:DebugPopup;
 
-    public static var skipNextTransOut:Bool = false;
-    public static var skipNextTransIn:Bool = false;
-
     function get_controls():Controls {
         return Controls.instance;
     }
 
     override public function create():Void {
-        if (!skipNextTransOut) {
-            openSubState(new MusicBeatTransition(0.5, true));
-        }
-
         debug = new DebugPopup();
         insert(999, debug);
 
@@ -48,35 +41,6 @@ class MusicBeatState extends FlxState implements IBeatReceiver {
 
         super.update(elapsed);
     }
-
-    public static function switchState(nextState:FlxState = null) {
-		if(nextState == null) nextState = FlxG.state;
-		if(nextState == FlxG.state) {
-			resetState();
-			return;
-		}
-
-		if (skipNextTransIn) FlxG.switchState(nextState);
-		else startTransition(nextState);
-		skipNextTransIn = false;
-	}
-
-	public static function resetState() {
-		if(skipNextTransIn) FlxG.resetState();
-		else startTransition();
-		skipNextTransIn = false;
-	}
-
-    public static function startTransition(nextState:FlxState = null) {
-		if(nextState == null)
-			nextState = FlxG.state;
-
-		FlxG.state.openSubState(new MusicBeatTransition(0.5, false));
-		if(nextState == FlxG.state)
-			MusicBeatTransition.finishCallback = function() FlxG.resetState();
-		else
-			MusicBeatTransition.finishCallback = function() FlxG.switchState(nextState);
-	}
 
     public function beatHit(curBeat:Int):Void {}
     public function stepHit(curStep:Int):Void {}

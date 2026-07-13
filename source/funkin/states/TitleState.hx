@@ -5,16 +5,16 @@ import flixel.input.gamepad.FlxGamepad;
 class TitleState extends MusicBeatState {
     public static var initialized:Bool = false;
 
-    public var ngSpr:FlxSprite;
-    public var logoBl:FlxSprite;
-    public var gfDance:FlxSprite;
-    public var titleText:FlxSprite;
-    public var textGroup:FlxGroup;
+    private var ngSpr:FlxSprite;
+    private var logoBl:FlxSprite;
+    private var gfDance:FlxSprite;
+    private var titleText:FlxSprite;
+    private var textGroup:FlxGroup;
 
-    public var danceLeft:Bool = false;
-    public var curWacky:Array<String> = [];
-    public var skippedIntro:Bool = false;
-    public var transitioning:Bool = false;
+    private var danceLeft:Bool = false;
+    private var curWacky:Array<String> = [];
+    private var skippedIntro:Bool = false;
+    private var transitioning:Bool = false;
 
     override public function create():Void {
         curWacky = FlxG.random.getObject(getIntroTextShit());
@@ -27,7 +27,7 @@ class TitleState extends MusicBeatState {
         text.screenCenter();
         add(text);*/
 
-        new FlxTimer().start(1, function(_:FlxTimer) {
+        new FlxTimer().start(1, function(timer:FlxTimer) {
             startIntro();
         });
     }
@@ -138,9 +138,9 @@ class TitleState extends MusicBeatState {
 
             transitioning = true;
 
-            new FlxTimer().start(1, function(_:FlxTimer) {
-                FlxG.switchState(new funkin.states.editors.TestEditorState());
-                trace('switching to editor state');
+            new FlxTimer().start(1, function(timer:FlxTimer) {
+                MusicBeatState.switchState(new MainMenuState());
+                trace('switching to mainmenu state');
             });
         }
 

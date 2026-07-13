@@ -1,0 +1,17 @@
+{
+    "meta": {
+        "scrollSpeed": 60
+    },
+    "sections": [
+        {
+            "title": "Offset Engine Team",
+            "color": [200, 200, 200],
+            "entries": [
+                {
+                    "name": "RobZ",
+                    "role": "Director"
+                }
+            ]
+        }
+    ]
+}
