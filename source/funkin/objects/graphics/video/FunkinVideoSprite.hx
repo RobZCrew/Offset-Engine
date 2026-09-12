@@ -1,5 +1,6 @@
 package funkin.objects.graphics.video;
 
+#if cpp
 import hxvlc.flixel.FlxVideoSprite;
 import hxvlc.util.Location;
 
@@ -86,3 +87,14 @@ class FunkinVideoSprite extends FlxVideoSprite {
         destroy();
     }
 }
+#else
+class FunkinVideoSprite {
+    public function new() {
+        showError();
+    }
+
+    private function showError() {
+        trace('FunkinVideoSprite: Video is not supported on this platform');
+    }
+}
+#end
