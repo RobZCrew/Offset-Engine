@@ -1,4 +1,4 @@
-package funkin.objects.song;
+package funkin.objects.songs;
 
 class Conductor {
     public static var bpm:Float = 100;

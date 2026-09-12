@@ -1,5 +1,11 @@
 package funkin.utils;
 
+#if sys
+import sys.FileSystem;
+import sys.io.File;
+#end
+
+import animate.FlxAnimateFrames.FlxAnimateSettings;
 import flixel.graphics.frames.FlxAtlasFrames;
 import openfl.utils.AssetType;
 import openfl.utils.Assets as OpenFlAssets;
@@ -86,29 +92,23 @@ class Paths {
         return 'assets/videos/$key.$VIDEO_EXT';
     }
 
-    public static inline function sound(key:String) {
+    public static inline function sound(key:String)
         return getPath('sounds/$key.$SOUND_EXT', SOUND);
-    }
 
-    public static inline function soundRandom(key:String, min:Int, max:Int) {
+    public static inline function soundRandom(key:String, min:Int, max:Int)
         return sound(key + FlxG.random.int(min, max));
-    }
 
-    public static inline function music(key:String) {
+    public static inline function music(key:String)
         return getPath('music/$key.$SOUND_EXT', MUSIC);
-    }
 
-    public static inline function voices(song:String, ?suffix:String = '') {
+    public static inline function voices(song:String, ?suffix:String = '')
         return getPath('songs/' + song.toLowerCase() + '/Voices' + suffix + '.' + SOUND_EXT, SOUND);
-    }
 
-    public static inline function inst(song:String) {
+    public static inline function inst(song:String)
         return getPath('songs/${song.toLowerCase()}/Inst.$SOUND_EXT', SOUND);
-    }
 
-    public static inline function image(key:String) {
+    public static inline function image(key:String)
         return getPath('images/$key.png', IMAGE);
-    }
 
     public static function font(key:String) {
         /*#if MODS_ALLOWED
@@ -136,15 +136,12 @@ class Paths {
         return null;
     }
 
-    public static inline function getSparrowAtlas(key:String) {
+    public static inline function getSparrowAtlas(key:String)
         return FlxAtlasFrames.fromSparrow(image(key), file('images/$key.xml', TEXT));
-    }
 
-    public static inline function getPackerAtlas(key:String) {
+    public static inline function getPackerAtlas(key:String)
         return FlxAtlasFrames.fromSpriteSheetPacker(image(key), file('images/$key.txt', TEXT));
-    }
 
-    public static inline function getAtlas(key:String):FlxAnimateFrames {
-        return FlxAnimateFrames.fromAnimate(image(key));
-    }
+    public static inline function getAnimateAtlas(key:String, ?settings:FlxAnimateSettings)
+        return FlxAnimateFrames.fromAnimate(image(key), null, null, null, false, settings);
 }

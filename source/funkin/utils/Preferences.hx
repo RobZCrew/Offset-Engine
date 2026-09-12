@@ -5,6 +5,7 @@ import flixel.input.gamepad.FlxGamepadInputID;
 
 class Preferences {
     public static var flashing:Bool = true;
+	public static var downscroll:Bool = false;
     public static var keyBinds:Map<String, Array<FlxKey>> = [
 		//Key Bind, Name for ControlsSubState
 		'note_up'		=> [W, UP],
@@ -45,4 +46,19 @@ class Preferences {
 		'pause'			=> [START],
 		'reset'			=> [BACK]
 	];
+
+	public static function save() {
+		if (FlxG.save.data.flashing) FlxG.save.data.flashing = flashing;
+		if (FlxG.save.data.downscroll) FlxG.save.data.downscroll = downscroll;
+		if (FlxG.save.data.keyBinds) FlxG.save.data.keyBinds = keyBinds;
+		if (FlxG.save.data.gamepadBinds) FlxG.save.data.gamepadBinds = gamepadBinds;
+		FlxG.save.flush();
+	}
+
+	public static function load() {
+		if (FlxG.save.data.flashing != null) flashing = FlxG.save.data.flashing;
+		if (FlxG.save.data.downscroll != null) downscroll = FlxG.save.data.downscroll;
+		if (FlxG.save.data.keyBinds != null) keyBinds = FlxG.save.data.keyBinds;
+		if (FlxG.save.data.gamepadBinds != null) gamepadBinds = FlxG.save.data.gamepadBinds;
+	}
 }

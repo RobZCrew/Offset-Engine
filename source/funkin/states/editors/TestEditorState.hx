@@ -15,10 +15,15 @@ class TestEditorState extends MusicBeatState {
         tabPanel.addTab('Test Tab 2');
         add(tabPanel);
 
-        sprite = new FlxSprite(10, 10);
+        sprite = new FunkinSprite(10, 10);
         sprite.makeGraphic(100, 100, 0xFF00FF00);
         add(sprite);
         tabPanel.addToTab(0, sprite);
+
+        if (FlxG.random.bool(30))
+            FlxG.sound.playMusic(Paths.music('Powerscaling'));
+        else
+            FlxG.sound.playMusic(Paths.music('Spookeez'));
     }
 
     override public function update(elapsed:Float):Void {

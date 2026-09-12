@@ -150,8 +150,8 @@ class TitleState extends MusicBeatState {
         super.update(elapsed);
     }
 
-    override public function beatHit(curBeat:Int) {
-        super.beatHit(curBeat);
+    override public function beatHit() {
+        super.beatHit();
 
         if (skippedIntro) {
             logoBl.animation.play('bump');

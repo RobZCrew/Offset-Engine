@@ -50,10 +50,10 @@ import funkin.states.MusicBeatState;
 import funkin.substates.MusicBeatSubstate;
 import funkin.objects.game.Alphabet;
 import funkin.objects.input.Controls;
-import funkin.objects.song.Conductor;
-/*import funkin.objects.graphics.FunkinSprite;
-import funkin.objects.graphics.text.FunkinText;
-import funkin.objects.graphics.video.FunkinVideo;*/
+import funkin.objects.songs.Conductor;
+import funkin.objects.graphics.FunkinSprite;
+//import funkin.objects.graphics.text.FunkinText;
+import funkin.objects.graphics.video.FunkinVideoSprite;
 import funkin.utils.CoolUtil;
 //import funkin.utils.CameraUtil;
 import funkin.utils.Preferences;

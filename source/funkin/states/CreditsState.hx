@@ -1,5 +1,6 @@
 package funkin.states;
 
+import funkin.objects.menus.HelperText;
 import lime.utils.Assets;
 
 /**
@@ -7,6 +8,8 @@ import lime.utils.Assets;
  */
 
 class CreditsState extends MusicBeatState {
+    var bg:FlxSprite;
+
     var scrollGroup:FlxSpriteGroup;
     var scrollY:Float = 0;
 
@@ -34,8 +37,20 @@ class CreditsState extends MusicBeatState {
                 entrySize = data.meta.entrySize;
         }
 
+        bg = new FlxSprite(-80).loadGraphic(Paths.image('menus/menuDesat'));
+        bg.scrollFactor.set();
+        bg.setGraphicSize(Std.int(bg.width * 1.185));
+        bg.updateHitbox();
+        bg.screenCenter();
+        add(bg);
+
+        randomColor();
+
         scrollGroup = new FlxSpriteGroup();
         add(scrollGroup);
+
+        var helperText:HelperText = new HelperText('Press C for change bg color randomly');
+        add(helperText);
 
         var yPos:Float = 80;
 
@@ -59,6 +74,8 @@ class CreditsState extends MusicBeatState {
     }
 
     override function update(elapsed:Float):Void {
+        super.update(elapsed);
+
         if (controls.UI_UP)
             scrollY += scrollSpeed * elapsed;
 
@@ -73,7 +90,13 @@ class CreditsState extends MusicBeatState {
         if (controls.BACK)
             MusicBeatState.switchState(new MainMenuState());
 
-        super.update(elapsed);
+        if (FlxG.keys.justPressed.C)
+            randomColor();
+    }
+
+    function randomColor() {
+        var newColor = parseColor([FlxG.random.int(0, 255), FlxG.random.int(0, 255), FlxG.random.int(0, 255)]);
+        bg.color = newColor;
     }
 
     function parseColor(arr:Array<Int>):FlxColor {

@@ -2,10 +2,9 @@ package funkin.substates;
 
 import flixel.FlxSubState;
 import funkin.states.transition.MusicBeatTransition;
-import funkin.system.interfaces.IBeatReceiver;
 import funkin.system.debug.DebugPopup;
 
-class MusicBeatSubstate extends FlxSubState implements IBeatReceiver {
+class MusicBeatSubstate extends FlxSubState {
     private var _lastBeat:Int = -1;
     private var _lastStep:Int = -1;
 
@@ -17,6 +16,10 @@ class MusicBeatSubstate extends FlxSubState implements IBeatReceiver {
 
     function get_controls():Controls {
         return Controls.instance;
+    }
+
+    public function new() {
+        super();
     }
 
     override public function create():Void {
@@ -32,16 +35,16 @@ class MusicBeatSubstate extends FlxSubState implements IBeatReceiver {
 
         if (curStep != _lastStep) {
             _lastStep = curStep;
-            stepHit(curStep);
+            stepHit();
             if (curStep % 4 == 0 && curBeat != _lastBeat) {
                 _lastBeat = curBeat;
-                beatHit(curBeat);
+                beatHit();
             }
         }
 
         super.update(elapsed);
     }
 
-    public function beatHit(curBeat:Int):Void {}
-    public function stepHit(curStep:Int):Void {}
+    public function beatHit():Void {}
+    public function stepHit():Void {}
 }

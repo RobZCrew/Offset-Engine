@@ -2,7 +2,7 @@
 <project>
         <!-- _________________________ Application Settings _________________________ -->
 
-        <app title="Friday Night Funkin': Offset Engine" file="RobZEngine" packageName="com.robz.robzengine" package="com.robz.robzengine" main="funkin.system.Main" version="0.1.0" company="RobZ" />
+        <app title="Friday Night Funkin': Offset Engine" file="OffsetEngine" packageName="com.robz.robzengine" package="com.robz.robzengine" main="funkin.system.Main" version="0.1.0" company="RobZ" />
 
         <set name="APP_ID" value="0x0100f6c013bbc000" />
 
@@ -62,14 +62,15 @@
         <!-- _______________________________ Libraries ______________________________ -->
 
         <!--<haxedev set="webgl" />-->
-        <haxelib name="flixel" version="5.6.1" />
+        <haxelib name="flixel" version="5.9.0" />
         <haxelib name="flixel-addons" version="3.2.2" />
         <haxelib name="flixel-ui" version="2.5.0" />
         <haxelib name="actuate" version="1.9.0" />
         <haxelib name="tjson" version="1.4.0" />
+        <haxelib name="sl-windows-api" version="1.4.0" if="windows" />
 
         <!-- Engine stuff -->
-        <haxelib name="hscript-iris" version="1.1.3" />
+        <haxelib name="hscript-improved" />
         <haxelib name="hxvlc" version="1.9.3" />
         <haxelib name="hxdiscord_rpc" version="1.2.4" />
         <haxelib name="flixel-animate" />
