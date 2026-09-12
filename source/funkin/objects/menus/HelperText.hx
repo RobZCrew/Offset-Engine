@@ -14,5 +14,6 @@ class HelperText extends FlxGroup {
         field = new FlxText(bg.x, bg.y + 4, FlxG.width, text, 16);
         field.setFormat(Paths.font('vcr.ttf'), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.TRANSPARENT);
         field.scrollFactor.set();
+        add(field);
     }
 }
