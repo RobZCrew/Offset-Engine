@@ -19,7 +19,7 @@ class Main extends Sprite {
         addChild(new PerformanceOverlay());
         #end
 
-        FlxG.save.bind('funkin', 'robzengine');
+        FlxG.save.bind('funkin', 'offsetengine');
         Preferences.load();
 
         Controls.instance = new Controls();
